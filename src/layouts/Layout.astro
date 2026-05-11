@@ -20,7 +20,7 @@ const { title, description = "Software Developer Portfolio" } = Astro.props;
 	<body>
 		<nav>
 			<div class="nav-container">
-				<a href="/" class="logo">Your Name</a>
+				<a href="/" class="logo">Samuel Gonzalez</a>
 				<ul class="nav-links">
 					<li><a href="#about">About</a></li>
 					<li><a href="#projects">Projects</a></li>
@@ -35,7 +35,7 @@ const { title, description = "Software Developer Portfolio" } = Astro.props;
 		</main>
 		
 		<footer>
-			<p>&copy; {new Date().getFullYear()} Your Name. Built with Astro & React.</p>
+			<p>&copy; {new Date().getFullYear()} Built by Sam, with Astro & React.</p>
 		</footer>
 	</body>
 </html>
@@ -87,8 +87,16 @@ const { title, description = "Software Developer Portfolio" } = Astro.props;
 	.logo {
 		font-size: 1.5rem;
 		font-weight: 700;
-		color: var(--primary);
+		background: linear-gradient(120deg, #343536 0%, #9e9d9e 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
 		text-decoration: none;
+		transition: opacity 0.2s ease;
+	}
+
+	.logo:hover {
+		opacity: 0.8;
 	}
 
 	.nav-links {

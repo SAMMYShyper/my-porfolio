@@ -14,25 +14,25 @@ interface Project {
 const projectsData: Project[] = [
   {
     id: 1,
-    title: "High-Performance Data Processor",
-    description: "Built a multi-threaded C++ application for processing large datasets with 10x performance improvement over previous solution.",
-    technologies: ["C++", "CMake", "Boost", "Threading"],
-    githubUrl: "https://github.com/yourusername/project1",
+    title: "Titanic Machine Learning from Disaster (Kaggle)",
+    description: "Predicted Titanic passenger survival. Applied data cleaning, feature engineering, and analysis to the Titanic dataset. Built machine learning models using Python and scikit-learn. Enhanced predictive performance through model selection and hyperparameter tuning.",
+    technologies: ["Python", "Jupyter Notebook", "Pandas", "scikit-learn", "NumPy", "Matplotlib", "Seaborn", "Machine Learning", "Data Analysis"],
+    githubUrl: "https://github.com/SammysHyper/titanic_machine_learning",
   },
   {
     id: 2,
-    title: "Algorithm Visualizer",
-    description: "Interactive web app visualizing sorting and graph algorithms. Built to learn web development fundamentals.",
-    technologies: ["JavaScript", "React", "Canvas API"],
-    githubUrl: "https://github.com/yourusername/project2",
-    liveUrl: "https://yourproject.com",
+    title: "Orbit - Discord Bot",
+    description:  "Developed an autonomous Discord chatbot in Python that centralized shared prompts and responses in one collaborative channel, reducing group decision-making time",
+    technologies: ["Python", "Discord API", "OpenAI API"],
+    githubUrl: "https://github.com/SammysHyper/sam_discord_bot",
+    liveUrl: "",
   },
   {
     id: 3,
-    title: "Memory Management Library",
-    description: "Custom memory allocator with pool-based allocation strategies, reducing fragmentation by 40%.",
-    technologies: ["C++", "Memory Management", "Profiling"],
-    githubUrl: "https://github.com/yourusername/project3",
+    title: "Ribbit - Autonomous Robot",
+    description: "Designed and built a 3D-printed autonomous robot frog capable of following objects using ultrasonic sensors, with all control logic programmed in C++ for Arduino components.",
+    technologies: ["C++", "Arduino", "Ultransonic Sensors", "3D Printing"],
+    liveUrl: "https://youtu.be/OMRBRlsXD_Q?si=KGbRw5iiSUkhO-XG",
   },
 ];
 
