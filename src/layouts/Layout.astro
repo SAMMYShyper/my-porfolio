@@ -1,0 +1,173 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Software Developer Portfolio" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<nav>
+			<div class="nav-container">
+				<a href="/" class="logo">Your Name</a>
+				<ul class="nav-links">
+					<li><a href="#about">About</a></li>
+					<li><a href="#projects">Projects</a></li>
+					<li><a href="#skills">Skills</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+		
+		<main>
+			<slot />
+		</main>
+		
+		<footer>
+			<p>&copy; {new Date().getFullYear()} Your Name. Built with Astro & React.</p>
+		</footer>
+	</body>
+</html>
+
+<style is:global>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	:root {
+		--primary: #2563eb;
+		--primary-dark: #1e40af;
+		--text: #1f2937;
+		--text-light: #6b7280;
+		--bg: #ffffff;
+		--bg-secondary: #f9fafb;
+		--border: #e5e7eb;
+	}
+
+	body {
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+		line-height: 1.6;
+		color: var(--text);
+		background: var(--bg);
+	}
+
+	/* Navigation */
+	nav {
+		background: var(--bg);
+		border-bottom: 1px solid var(--border);
+		position: sticky;
+		top: 0;
+		z-index: 100;
+		backdrop-filter: blur(10px);
+		background: rgba(255, 255, 255, 0.9);
+	}
+
+	.nav-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 1rem 2rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.logo {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: var(--primary);
+		text-decoration: none;
+	}
+
+	.nav-links {
+		display: flex;
+		gap: 2rem;
+		list-style: none;
+	}
+
+	.nav-links a {
+		color: var(--text);
+		text-decoration: none;
+		font-weight: 500;
+		transition: color 0.2s;
+	}
+
+	.nav-links a:hover {
+		color: var(--primary);
+	}
+
+	/* Main content */
+	main {
+		min-height: calc(100vh - 140px);
+	}
+
+	/* Footer */
+	footer {
+		background: var(--bg-secondary);
+		padding: 2rem;
+		text-align: center;
+		color: var(--text-light);
+		border-top: 1px solid var(--border);
+	}
+
+	/* Sections */
+	section {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 4rem 2rem;
+	}
+
+	h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+		color: var(--text);
+	}
+
+	h2 {
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+		color: var(--text);
+	}
+
+	h3 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: var(--text);
+	}
+
+	p {
+		color: var(--text-light);
+		font-size: 1.1rem;
+	}
+
+	/* Responsive */
+	@media (max-width: 768px) {
+		.nav-links {
+			gap: 1rem;
+		}
+
+		h1 {
+			font-size: 2rem;
+		}
+
+		h2 {
+			font-size: 1.8rem;
+		}
+
+		section {
+			padding: 3rem 1.5rem;
+		}
+	}
+</style>

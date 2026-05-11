@@ -1,0 +1,44 @@
+---
+// About.astro - Static component for the about section
+---
+
+<section id="about">
+	<h2>About Me</h2>
+	<div class="about-content">
+		<div class="about-text">
+			<p>
+				I'm a software developer with strong experience in C++ development, 
+				focusing on performance-critical applications and system-level programming.
+			</p>
+			<p>
+				I'm passionate about writing clean, efficient code and continuously learning 
+				new technologies. Currently exploring modern web development with Astro and React 
+				to broaden my skill set and build full-stack applications.
+			</p>
+			<p>
+				When I'm not coding, you'll find me [add your hobbies/interests here].
+			</p>
+		</div>
+	</div>
+</section>
+
+<style>
+	#about {
+		background: white;
+	}
+
+	.about-content {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.about-text p {
+		margin-bottom: 1.5rem;
+		font-size: 1.1rem;
+		line-height: 1.8;
+	}
+
+	.about-text p:last-child {
+		margin-bottom: 0;
+	}
+</style>
