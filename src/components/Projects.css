@@ -1,47 +1,54 @@
 #projects {
   background: var(--bg-secondary);
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding-left: max(1.5rem, calc((100vw - 1080px) / 2));
+  padding-right: max(1.5rem, calc((100vw - 1080px) / 2));
 }
 
 .filter-buttons {
   display: flex;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
+  gap: 0.45rem;
+  margin-bottom: 2.25rem;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .filter-buttons button {
-  padding: 0.5rem 1.25rem;
-  border: 2px solid var(--border);
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--border);
   background: white;
-  color: var(--text);
+  color: var(--text-light);
   border-radius: 6px;
   cursor: pointer;
-  font-weight: 500;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
   transition: all 0.2s;
 }
 
 .filter-buttons button:hover {
-  border-color: var(--primary);
-  color: var(--primary);
+  border-color: var(--border-strong);
+  color: var(--ink);
 }
 
 .filter-buttons button.active {
-  background: var(--primary);
-  color: white;
-  border-color: var(--primary);
+  background: var(--ink);
+  color: grey;
+  border-color: var(--ink);
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1rem;
 }
 
 .project-card {
   background: white;
-  padding: 2rem;
-  border-radius: 12px;
+  padding: 1.5rem;
+  border-radius: 8px;
   border: 1px solid var(--border);
   transition: all 0.3s ease;
   display: flex;
@@ -49,14 +56,15 @@
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-  border-color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: var(--border-strong);
 }
 
 .project-card h3 {
-  color: var(--text);
+  color: var(--ink);
   margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .project-card p {
@@ -74,11 +82,12 @@
 
 .tech-tag {
   background: var(--bg-secondary);
-  color: var(--primary);
+  color: #444444;
   padding: 0.25rem 0.75rem;
   border-radius: 4px;
   font-size: 0.875rem;
   font-weight: 500;
+  border: 1px solid var(--border);
 }
 
 .project-links {
@@ -88,13 +97,20 @@
 }
 
 .project-links a {
-  color: var(--primary);
+  color: var(--ink);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s;
 }
 
 .project-links a:hover {
-  color: var(--primary-dark);
+  color: var(--text-light);
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  #projects {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
 }

@@ -4,7 +4,7 @@ interface Props {
 	description?: string;
 }
 
-const { title, description = "Software Developer Portfolio" } = Astro.props;
+const { title, description = "Computer Science portfolio for Samuel Gonzalez" } = Astro.props;
 ---
 
 <!doctype html>
@@ -25,15 +25,15 @@ const { title, description = "Software Developer Portfolio" } = Astro.props;
 					<li><a href="#about">About</a></li>
 					<li><a href="#projects">Projects</a></li>
 					<li><a href="#skills">Skills</a></li>
-					<li><a href="#contact">Contact</a></li>
+					<li><a href="#contact">Connect</a></li>
 				</ul>
 			</div>
 		</nav>
-		
+
 		<main>
 			<slot />
 		</main>
-		
+
 		<footer>
 			<p>&copy; {new Date().getFullYear()} Built by Sam, with Astro & React.</p>
 		</footer>
@@ -48,13 +48,19 @@ const { title, description = "Software Developer Portfolio" } = Astro.props;
 	}
 
 	:root {
-		--primary: #2563eb;
-		--primary-dark: #1e40af;
-		--text: #1f2937;
-		--text-light: #6b7280;
+		--ink: #0a0a0a;
+		--text: #18181b;
+		--text-light: #666666;
+		--muted: #8a8a8a;
 		--bg: #ffffff;
-		--bg-secondary: #f9fafb;
-		--border: #e5e7eb;
+		--bg-secondary: #f7f7f7;
+		--border: #dedede;
+		--border-strong: #b8b8b8;
+		--shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+	}
+
+	html {
+		scroll-behavior: smooth;
 	}
 
 	body {
@@ -62,91 +68,99 @@ const { title, description = "Software Developer Portfolio" } = Astro.props;
 		line-height: 1.6;
 		color: var(--text);
 		background: var(--bg);
+		text-rendering: optimizeLegibility;
 	}
 
-	/* Navigation */
 	nav {
-		background: var(--bg);
-		border-bottom: 1px solid var(--border);
 		position: sticky;
 		top: 0;
 		z-index: 100;
 		backdrop-filter: blur(10px);
-		background: rgba(255, 255, 255, 0.9);
+		background: rgba(255, 255, 255, 0.86);
+		border-bottom: 1px solid rgba(222, 222, 222, 0.75);
 	}
 
 	.nav-container {
-		max-width: 1200px;
+		max-width: 1080px;
 		margin: 0 auto;
-		padding: 1rem 2rem;
+		padding: 1rem 1.5rem;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		gap: 1.5rem;
 	}
 
 	.logo {
-		font-size: 1.5rem;
+		color: var(--ink);
+		font-size: 0.95rem;
 		font-weight: 700;
-		background: linear-gradient(120deg, #343536 0%, #9e9d9e 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
 		text-decoration: none;
 		transition: opacity 0.2s ease;
 	}
 
 	.logo:hover {
-		opacity: 0.8;
+		opacity: 0.72;
 	}
 
 	.nav-links {
 		display: flex;
-		gap: 2rem;
+		gap: 1.25rem;
 		list-style: none;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: flex-end;
 	}
 
 	.nav-links a {
-		color: var(--text);
+		color: var(--text-light);
 		text-decoration: none;
-		font-weight: 500;
+		font-size: 0.9rem;
+		font-weight: 600;
 		transition: color 0.2s;
 	}
 
 	.nav-links a:hover {
-		color: var(--primary);
+		color: var(--ink);
 	}
 
-	/* Main content */
 	main {
 		min-height: calc(100vh - 140px);
 	}
 
-	/* Footer */
 	footer {
-		background: var(--bg-secondary);
-		padding: 2rem;
+		background: var(--ink);
+		padding: 2rem 1.5rem;
 		text-align: center;
-		color: var(--text-light);
-		border-top: 1px solid var(--border);
+		border-top: 1px solid var(--ink);
 	}
 
-	/* Sections */
+	footer p {
+		color: #d4d4d4;
+		font-size: 0.92rem;
+	}
+
 	section {
-		max-width: 1200px;
+		max-width: 1080px;
 		margin: 0 auto;
-		padding: 4rem 2rem;
+		padding: 5.5rem 1.5rem;
 	}
 
 	h1 {
-		font-size: 3rem;
+		font-size: clamp(3rem, 8vw, 6.75rem);
+		line-height: 0.94;
 		margin-bottom: 1rem;
-		color: var(--text);
+		color: var(--ink);
+		letter-spacing: 0;
 	}
 
 	h2 {
-		font-size: 2.5rem;
+		font-size: clamp(1.75rem, 3vw, 2.7rem);
+		line-height: 1.05;
 		margin-bottom: 2rem;
-		color: var(--text);
+		color: var(--ink);
+		letter-spacing: 0;
 	}
 
 	h3 {
@@ -157,17 +171,17 @@ const { title, description = "Software Developer Portfolio" } = Astro.props;
 
 	p {
 		color: var(--text-light);
-		font-size: 1.1rem;
+		font-size: 1rem;
 	}
 
-	/* Responsive */
 	@media (max-width: 768px) {
-		.nav-links {
-			gap: 1rem;
+		.nav-container {
+			align-items: flex-start;
+			flex-direction: column;
 		}
 
-		h1 {
-			font-size: 2rem;
+		.nav-links {
+			gap: 0.75rem;
 		}
 
 		h2 {
@@ -175,7 +189,7 @@ const { title, description = "Software Developer Portfolio" } = Astro.props;
 		}
 
 		section {
-			padding: 3rem 1.5rem;
+			padding: 4rem 1.25rem;
 		}
 	}
 </style>

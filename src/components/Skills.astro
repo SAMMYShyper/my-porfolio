@@ -1,59 +1,75 @@
 ---
 // Skills.astro
-const skillCategories = [
+const technicalGroups = [
 	{
 		title: "Languages",
 		skills: ["C++", "C", "Python", "RISC-V", "Verilog"]
 	},
 	{
-		title: "Tools & Frameworks",
+		title: "Tools",
 		skills: ["GitHub", "GitHub Copilot", "Git/Unix/Linux Shell", "Pandas", "NumPy", "scikit-learn", "matplotlib"]
-	},
-	{
-		title: "Concepts",
-		skills: ["Data Structures", "Artificial Intelligence", "Machine Learning", "PC Building & Gaming"]
 	}
 ];
+
+const coursework = ["Data Structures", "Artificial Intelligence", "Discrete Structures", "Computer Logic & Design", "Program Design", "Programming Concepts"];
 ---
 
 <section id="skills">
-	<h2>Skills & Technologies</h2>
+	<h2>Skills & Concepts</h2>
 	<div class="skills-grid">
-		{skillCategories.map(category => (
-			<div class="skill-category">
-				<h3>{category.title}</h3>
-				<div class="skill-tags">
-					{category.skills.map(skill => (
-						<span class="skill-tag">{skill}</span>
-					))}
+		<div class="skill-category technical-skills">
+			{technicalGroups.map(group => (
+				<div class="skill-group">
+					<h3>{group.title}</h3>
+					<div class="skill-tags">
+						{group.skills.map(skill => (
+							<span class="skill-tag">{skill}</span>
+						))}
+					</div>
 				</div>
+			))}
+		</div>
+
+		<div class="skill-category">
+			<h3>Coursework</h3>
+			<div class="skill-tags">
+				{coursework.map(skill => (
+					<span class="skill-tag">{skill}</span>
+				))}
 			</div>
-		))}
+		</div>
 	</div>
 </section>
 
 <style>
 	#skills {
-		background: var(--bg-secondary);
+		background: #ffffff;
 	}
 
 	.skills-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-		gap: 2rem;
+		grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.9fr);
+		gap: 1rem;
 	}
 
 	.skill-category {
-		background: white;
-		padding: 2rem;
-		border-radius: 12px;
+		background: var(--bg-secondary);
+		padding: 1.5rem;
+		border-radius: 8px;
 		border: 1px solid var(--border);
 	}
 
+	.skill-group + .skill-group {
+		border-top: 1px solid var(--border);
+		margin-top: 1.5rem;
+		padding-top: 1.5rem;
+	}
+
 	.skill-category h3 {
-		color: var(--primary);
+		color: #000000;
 		margin-bottom: 1.5rem;
-		font-size: 1.3rem;
+		font-size: 1.05rem;
+		font-weight: 700;
 	}
 
 	.skill-tags {
@@ -63,12 +79,19 @@ const skillCategories = [
 	}
 
 	.skill-tag {
-		background: var(--bg-secondary);
+		background: white;
 		color: var(--text);
-		padding: 0.5rem 1rem;
+		padding: 0.45rem 0.75rem;
 		border-radius: 6px;
-		font-size: 0.95rem;
+		font-size: 0.9rem;
 		font-weight: 500;
 		border: 1px solid var(--border);
+		white-space: nowrap;
+	}
+
+	@media (max-width: 768px) {
+		.skills-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

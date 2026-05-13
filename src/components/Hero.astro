@@ -4,109 +4,78 @@
 
 <section id="hero">
 	<div class="hero-content">
-		<h1>Hi, I'm <span class="highlight">Sam</span></h1>
-		<p class="title">Computer Science Undergraduate
-		</p>
-		<p class="description">
-			University of South Florida
-		</p>
-		<div class="cta-buttons">
-			<a href="#projects" class="btn btn-primary">View My Work</a>
-			<a href="#contact" class="btn btn-secondary">Get In Touch</a>
-		</div>
+		<p class="eyebrow">Portfolio</p>
+		<h1>Samuel Gonzalez</h1>
+		<p class="title">Computer Science Undergraduate</p>
+		<p class="description">University of South Florida</p>
 	</div>
 </section>
 
 <style>
 	#hero {
-		min-height: 80vh;
+		max-width: none;
+		width: 100%;
+		margin: 0;
+		min-height: 82vh;
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		background: linear-gradient(135deg, #000000 0%, #363636 100%);
+		justify-content: flex-start;
+		background: #0a0a0a;
 		color: white;
-		text-align: center;
+		text-align: left;
+		padding: 6rem max(1.5rem, calc((100vw - 1080px) / 2));
+		position: relative;
+		overflow: hidden;
+	}
+
+	#hero::after {
+		content: "";
+		position: absolute;
+		inset: auto -10vw -24vh auto;
+		width: 58vw;
+		height: 58vw;
+		background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 62%);
+		pointer-events: none;
 	}
 
 	.hero-content {
-		max-width: 800px;
+		max-width: 760px;
+		position: relative;
+		z-index: 1;
+	}
+
+	.eyebrow {
+		color: rgba(255, 255, 255, 0.62);
+		font-size: 0.8rem;
+		font-weight: 700;
+		letter-spacing: 0.16em;
+		margin-bottom: 1.25rem;
+		text-transform: uppercase;
 	}
 
 	#hero h1 {
-		font-size: 3.5rem;
-		margin-bottom: 1rem;
+		font-size: clamp(2.5rem, 5vw, 4.5rem);
+		line-height: 1;
+		margin-bottom: 1.25rem;
 		color: white;
-	}
-
-	.highlight {
-		background: linear-gradient(120deg, #60a5fa 0%, #a78bfa 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		font-weight: 700;
 	}
 
 	.title {
-		font-size: 1.8rem;
-		margin-bottom: 1.5rem;
-		color: rgba(255, 255, 255, 0.9);
-		font-weight: 500;
+		font-size: clamp(1.15rem, 2.3vw, 1.55rem);
+		margin-bottom: 0.35rem;
+		color: rgba(255, 255, 255, 0.88);
+		font-weight: 600;
 	}
 
 	.description {
-		font-size: 1.2rem;
-		margin-bottom: 2rem;
-		color: rgba(255, 255, 255, 0.8);
-		max-width: 600px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	.cta-buttons {
-		display: flex;
-		gap: 1rem;
-		justify-content: center;
-		flex-wrap: wrap;
-	}
-
-	.btn {
-		padding: 0.875rem 2rem;
-		border-radius: 8px;
-		text-decoration: none;
-		font-weight: 600;
-		transition: all 0.3s ease;
-		display: inline-block;
-	}
-
-	.btn-primary {
-		background: white;
-		color: #434447;
-	}
-
-	.btn-primary:hover {
-		transform: translateY(-2px);
-		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-	}
-
-	.btn-secondary {
-		background: transparent;
-		color: white;
-		border: 2px solid white;
-	}
-
-	.btn-secondary:hover {
-		background: white;
-		color: #434447;
-		transform: translateY(-2px);
+		font-size: 1rem;
+		margin-bottom: 2.5rem;
+		color: rgba(255, 255, 255, 0.62);
 	}
 
 	@media (max-width: 768px) {
-		#hero h1 {
-			font-size: 2.5rem;
-		}
-
-		.title {
-			font-size: 1.4rem;
+		#hero {
+			min-height: 74vh;
 		}
 
 		.description {
