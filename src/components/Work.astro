@@ -1,0 +1,184 @@
+---
+const workItems = [
+	{
+		company: "Morgan Stanley",
+		role: "Incoming Tech Summer Analyst",
+		team: "Enterprise Engineering",
+		date: "Summer 2026",
+		location: "Atlanta, GA",
+		description: "Joining the enterprise engineering organization to work on internal systems at production scale."
+	},
+	{
+		company: "GitHub",
+		role: "Support Delivery Intern",
+		team: "Enterprise Support Engineering",
+		date: "Summer 2025",
+		location: "Remote",
+		description: "Analyzed enterprise support signals across Copilot and cloud tooling to help teams prioritize product and operational improvements."
+	},
+	{
+		company: "UAT Team",
+		role: "Electrical Engineering Intern",
+		team: "Industrial systems",
+		date: "Summer 2024",
+		location: "Fort Lauderdale, FL",
+		description: "Built hardware and control-system pieces for a closed-circuit reverse osmosis manufacturing system."
+	}
+];
+
+const honors = [
+	"HSF Scholar",
+	"USF Directors Award Scholarship",
+	"Florida Academic Scholarship",
+	"Hackabull x Major League Hacking Invited Judge"
+];
+---
+
+<section id="work">
+	<div class="section-kicker">Work</div>
+	<div class="work-layout">
+		<div class="work-heading">
+			<h2>Enterprise-minded, still hands-on.</h2>
+			<p>
+				I like teams where the work is technical, visible, and useful: engineering support systems,
+				data-informed tooling, and products that help people move faster.
+			</p>
+		</div>
+
+		<div class="timeline">
+			{workItems.map((item) => (
+				<article class="work-item">
+					<div>
+						<h3>{item.role}</h3>
+						<p class="company">{item.company} / {item.team}</p>
+						<p>{item.description}</p>
+					</div>
+					<div class="work-meta">
+						<span>{item.date}</span>
+						<span>{item.location}</span>
+					</div>
+				</article>
+			))}
+		</div>
+	</div>
+
+	<div class="honors-strip" aria-label="Honors">
+		{honors.map((honor) => <span>{honor}</span>)}
+	</div>
+</section>
+
+<style>
+	#work {
+		position: relative;
+		max-width: 1120px;
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+	}
+
+	.section-kicker {
+		color: var(--accent);
+		font-size: 0.72rem;
+		font-weight: 800;
+		letter-spacing: 0.18em;
+		margin-bottom: 1.4rem;
+		text-transform: uppercase;
+	}
+
+	.work-layout {
+		display: grid;
+		grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.25fr);
+		gap: clamp(2rem, 6vw, 4.5rem);
+		align-items: start;
+	}
+
+	.work-heading {
+		position: sticky;
+		top: 6rem;
+	}
+
+	.work-heading h2 {
+		margin-bottom: 1.2rem;
+	}
+
+	.work-heading p {
+		max-width: 32rem;
+	}
+
+	.timeline {
+		border-top: 1px solid var(--line);
+	}
+
+	.work-item {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 150px;
+		gap: 1.5rem;
+		padding: 1.35rem 0;
+		border-bottom: 1px solid var(--line);
+	}
+
+	.work-item h3 {
+		color: var(--paper);
+		font-size: 1rem;
+		line-height: 1.25;
+		margin-bottom: 0.25rem;
+	}
+
+	.company {
+		color: var(--muted);
+		font-size: 0.86rem;
+		margin-bottom: 0.55rem;
+	}
+
+	.work-item p {
+		font-size: 0.95rem;
+		line-height: 1.6;
+	}
+
+	.work-meta {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		text-align: right;
+	}
+
+	.work-meta span {
+		color: var(--dim);
+		font-size: 0.78rem;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+	}
+
+	.honors-strip {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.55rem;
+		margin-top: 2rem;
+	}
+
+	.honors-strip span {
+		border: 1px solid var(--line);
+		border-radius: 999px;
+		color: var(--soft);
+		font-size: 0.82rem;
+		font-weight: 700;
+		padding: 0.42rem 0.7rem;
+	}
+
+	@media (max-width: 820px) {
+		.work-layout,
+		.work-item {
+			grid-template-columns: 1fr;
+		}
+
+		.work-heading {
+			position: static;
+		}
+
+		.work-meta {
+			flex-direction: row;
+			justify-content: space-between;
+			text-align: left;
+		}
+	}
+</style>

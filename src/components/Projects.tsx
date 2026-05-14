@@ -13,15 +13,15 @@ interface Project {
 const projectsData: Project[] = [
   {
     id: 1,
-    title: "Titanic Machine Learning from Disaster (Kaggle)",
-    description: "Predicted Titanic passenger survival. Applied data cleaning, feature engineering, and analysis to the Titanic dataset. Built machine learning models using Python and scikit-learn. Enhanced predictive performance through model selection and hyperparameter tuning.",
+    title: "Titanic ML",
+    description: "A Kaggle survival model focused on data cleaning, feature engineering, model selection, and clear analysis with Python.",
     technologies: ["Python", "Pandas", "scikit-learn", "NumPy", "Matplotlib", "Seaborn", "Machine Learning", "Data Analysis"],
     githubUrl: "https://github.com/SammysHyper/titanic_machine_learning",
   },
   {
     id: 2,
     title: "Orbit - Discord Bot",
-    description: "Developed an autonomous Discord chatbot in Python that centralized shared prompts and responses in one collaborative channel, reducing group decision-making time.",
+    description: "A collaborative Discord assistant that centralizes prompts and responses so groups can make decisions faster in one shared channel.",
     technologies: ["Python", "Discord API", "OpenAI API"],
     githubUrl: "https://github.com/SammysHyper/sam_discord_bot",
     liveUrl: "",
@@ -29,7 +29,7 @@ const projectsData: Project[] = [
   {
     id: 3,
     title: "Ribbit - Autonomous Robot",
-    description: "Designed and built a 3D-printed autonomous robot frog capable of following objects using ultrasonic sensors, with all control logic programmed in C++ for Arduino components.",
+    description: "A 3D-printed autonomous frog robot with ultrasonic sensing, Arduino control logic, and a public STEM demo for younger students.",
     technologies: ["C++", "Arduino", "Ultrasonic Sensors", "3D Printing"],
     liveUrl: "https://youtu.be/OMRBRlsXD_Q?si=KGbRw5iiSUkhO-XG",
   },
@@ -48,7 +48,11 @@ export default function Projects() {
 
   return (
     <section id="projects">
-      <h2>Featured Projects</h2>
+      <p className="section-kicker">Projects</p>
+      <div className="projects-heading">
+        <h2>Small builds, useful constraints.</h2>
+        <p>Software, data, and hardware projects that kept the links intact and the scope honest.</p>
+      </div>
 
       <div className="filter-buttons">
         <button
@@ -83,12 +87,12 @@ export default function Projects() {
             <div className="project-links">
               {project.githubUrl && (
                 <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                  GitHub &rarr;
+                  GitHub
                 </a>
               )}
               {project.liveUrl && (
                 <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                  Live Demo &rarr;
+                  Video
                 </a>
               )}
             </div>

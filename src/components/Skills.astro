@@ -3,11 +3,15 @@
 const technicalGroups = [
 	{
 		title: "Languages",
-		skills: ["C++", "C", "Python", "RISC-V", "Verilog"]
+		skills: ["Python", "C", "C++", "SQL", "RISC-V", "Verilog"]
 	},
 	{
-		title: "Tools",
-		skills: ["GitHub", "GitHub Copilot", "Git/Unix/Linux Shell", "Pandas", "NumPy", "scikit-learn", "matplotlib"]
+		title: "Tools & Data",
+		skills: ["GitHub", "GitHub Copilot", "Git", "Unix/Linux", "Pandas", "NumPy", "scikit-learn", "Matplotlib", "Power BI"]
+	},
+	{
+		title: "Signals",
+		skills: ["Troubleshooting", "Support tooling", "Scripting", "Data analysis", "Technical communication", "Spanish"]
 	}
 ];
 
@@ -15,6 +19,7 @@ const coursework = ["Data Structures", "Artificial Intelligence", "Discrete Stru
 ---
 
 <section id="skills">
+	<p class="section-kicker">Toolkit</p>
 	<h2>Skills & Concepts</h2>
 	<div class="skills-grid">
 		<div class="skill-category technical-skills">
@@ -43,7 +48,16 @@ const coursework = ["Data Structures", "Artificial Intelligence", "Discrete Stru
 
 <style>
 	#skills {
-		background: #ffffff;
+		max-width: 1120px;
+	}
+
+	.section-kicker {
+		color: var(--accent-2);
+		font-size: 0.72rem;
+		font-weight: 800;
+		letter-spacing: 0.18em;
+		margin-bottom: 1.1rem;
+		text-transform: uppercase;
 	}
 
 	.skills-grid {
@@ -53,20 +67,20 @@ const coursework = ["Data Structures", "Artificial Intelligence", "Discrete Stru
 	}
 
 	.skill-category {
-		background: var(--bg-secondary);
+		background: var(--ink-2);
 		padding: 1.5rem;
 		border-radius: 8px;
-		border: 1px solid var(--border);
+		border: 1px solid var(--line);
 	}
 
 	.skill-group + .skill-group {
-		border-top: 1px solid var(--border);
+		border-top: 1px solid var(--line);
 		margin-top: 1.5rem;
 		padding-top: 1.5rem;
 	}
 
 	.skill-category h3 {
-		color: #000000;
+		color: var(--paper);
 		margin-bottom: 1.5rem;
 		font-size: 1.05rem;
 		font-weight: 700;
@@ -79,13 +93,13 @@ const coursework = ["Data Structures", "Artificial Intelligence", "Discrete Stru
 	}
 
 	.skill-tag {
-		background: white;
-		color: var(--text);
+		background: rgba(242, 243, 235, 0.04);
+		color: var(--soft);
 		padding: 0.45rem 0.75rem;
 		border-radius: 6px;
 		font-size: 0.9rem;
 		font-weight: 500;
-		border: 1px solid var(--border);
+		border: 1px solid var(--line);
 		white-space: nowrap;
 	}
 
